@@ -1,0 +1,24 @@
+{
+  "ociVersion": "1.0.0",
+  "process": {
+    "terminal": false,
+    "user": {"uid": 0, "gid": 0},
+    "args": ["/bin/hello-world"],
+    "env": ["PATH=/bin"],
+    "cwd": "/"
+  },
+  "root": {"path": "rootfs", "readonly": false},
+  "hostname": "rust-container",
+  "mounts": [
+    {"destination": "/proc", "type": "proc", "source": "proc"}
+  ],
+  "linux": {
+    "namespaces": [
+      {"type": "pid"},
+      {"type": "network"},
+      {"type": "ipc"},
+      {"type": "uts"},
+      {"type": "mount"}
+    ]
+  }
+}
